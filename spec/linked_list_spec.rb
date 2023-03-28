@@ -20,4 +20,18 @@ RSpec.describe LinkedList do
       expect(@list.head.next_node).to eq(nil)
     end
   end
+
+  describe '#count' do 
+    it 'counts nodes' do 
+      @list.append('West')
+      expect(@list.head.next_node).to eq(nil)
+      expect(@list.count).to eq(1)
+    end
+
+    it 'counts more than 1 node' do 
+      @list.append('West') 
+      @list.append('Donkey')
+      expect(@list.count).to eq(2)
+    end
+  end
 end
