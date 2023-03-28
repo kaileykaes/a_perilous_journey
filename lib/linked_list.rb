@@ -30,4 +30,19 @@ class LinkedList
     end
     counter
   end
+
+  def to_string 
+    starter_data = ""
+    if @head == nil
+      starter_data
+    else 
+      present_node = @head
+      while present_node.next_node != nil
+      starter_data += "The #{present_node.surname} Family"
+      starter_data += ' '
+      present_node = present_node.next_node
+      end
+    end
+    starter_data += "The #{present_node.surname} Family"
+  end
 end
