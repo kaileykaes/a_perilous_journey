@@ -21,7 +21,10 @@ RSpec.describe LinkedList do
     end
 
     it 'appends more than 1 node' do 
-      
+      @list.append('Rhodes')
+      @list.append('Hardy')
+      expect(@list.count).to eq(2)
+      expect(@list.to_string).to eq('The Rhodes family, followed by the Hardy family')
     end
   end
 
@@ -42,7 +45,6 @@ RSpec.describe LinkedList do
   describe '#to_string' do 
     it 'creates string from data' do 
       @list.append('West') 
-      require 'pry'; binding.pry
       expect(@list.to_string).to eq('The West Family')
     end
   end
