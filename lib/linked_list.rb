@@ -37,12 +37,15 @@ class LinkedList
       starter_data
     else 
       present_node = @head
-      while present_node.next_node != nil
-      starter_data += "The #{present_node.surname} Family"
+      starter_data += 'The '
+      until present_node.next_node == nil
+      starter_data += "#{present_node.surname} family, followed by the"
       starter_data += ' '
       present_node = present_node.next_node
       end
     end
-    starter_data += "The #{present_node.surname} Family"
+    starter_data += "#{present_node.surname} family" if count > 1
+    starter_data += "#{present_node.surname} Family" if count == 1
+    starter_data
   end
 end
